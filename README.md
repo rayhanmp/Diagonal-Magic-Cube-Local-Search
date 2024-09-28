@@ -1,6 +1,6 @@
 # Diagonal Magic Cube Local Search
 
-Inspired by the advent of diagonal magic cube proposed by Trump, we made an attempt to solve it using various local search algorithms: steepest ascent hill climbing, hill climbing with sideways move, stochastic hill climbing, and simulated annealing. Our approach is primarily based on the algorithms presented in the book Artificial Intelligence: A Modern Approach by Stuart Russell and Peter Norvig.
+Inspired by the advent of the 5x5x5 diagonal magic cube proposed by Walter Trump, we made an attempt to solve it using various local search algorithms: steepest ascent hill climbing, hill climbing with sideways move, stochastic hill climbing, and simulated annealing. Our approach is primarily based on the algorithms presented in the book Artificial Intelligence: A Modern Approach by Stuart Russell and Peter Norvig.
 
 <p align="center">
   <a href ="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License - GPLv3"></a>
