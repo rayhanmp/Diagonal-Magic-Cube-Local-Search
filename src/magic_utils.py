@@ -5,7 +5,7 @@ import numpy as np
 # @date: 2024-03-11
 
 # Determine Magic Number for N Cube
-def MagicNumber(n):
+def magic_number(n):
     return (n * (n**3 + 1)) // 2
 
 # Make a 3D cube with random unique numbers from 1..N^3
@@ -22,7 +22,7 @@ def objective_function(cube, magic_number):
     # Calculate difference for rows, columns, and depths
     for i in range(n):
         for j in range(n):
-            # Calculate difference for depth, rows, and columns (x-axis)
+            # Calculate difference for depth, rows, and columns
             state_value += abs(np.sum(cube[i, j, :]) - magic_number)
             state_value += abs(np.sum(cube[i, :, j]) - magic_number)
             state_value += abs(np.sum(cube[:, i, j]) - magic_number)
@@ -33,7 +33,7 @@ def objective_function(cube, magic_number):
         state_value += abs(np.sum(cube[i, range(n), range(n)]) - magic_number)
         state_value += abs(np.sum(cube[range(n), i, range(n)]) - magic_number)
         state_value += abs(np.sum(cube[range(n), range(n), i]) - magic_number)
-        
+
         # Opposite diagonals
         state_value += abs(np.sum(cube[i, range(n), range(n-1, -1, -1)]) - magic_number)
         state_value += abs(np.sum(cube[range(n), i, range(n-1, -1, -1)]) - magic_number)
@@ -51,7 +51,7 @@ def objective_function(cube, magic_number):
 # Test driver
 def test_magic_cube(cube):
     n = cube.shape[0]
-    magic_number = MagicNumber(n)
+    magic_number = magic_number(n)
     state_value = objective_function(cube, magic_number)
 
     # Expected value for the test cube
