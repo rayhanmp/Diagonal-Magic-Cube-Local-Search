@@ -2,7 +2,7 @@ import numpy as np
 
 # Module for basic magic-cube-related utilities
 # @author: Rayhan Maheswara Pramanda & Jasmine Callista Aurellie Irfan
-# @date: 2024-03-11
+# @date: 2024-11-03
 
 # Determine Magic Number for N Cube
 def magic_number(n):

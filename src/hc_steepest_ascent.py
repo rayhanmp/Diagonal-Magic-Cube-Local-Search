@@ -1,9 +1,8 @@
 from magic_utils import objective_function
 
-
 # Implementation of the Hill Climbing Steepest Ascent algorithm
 # @author: Rayhan Maheswara Pramanda
-# @date: 2024-03-11
+# @date: 2024-11-03
 
 def hc_steepest_ascent(cube, magic_number):
     n = cube.shape[0]

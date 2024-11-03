@@ -2,7 +2,7 @@ from magic_utils import objective_function
 
 # Implementation of the Hill Climbing with Sideways Move algorithm
 # @author: Rayhan Maheswara Pramanda
-# @date: 2024-03-11
+# @date: 2024-11-03
 
 def hc_sideways_move(cube, magic_number, max_sideways_moves): 
     n = cube.shape[0]
