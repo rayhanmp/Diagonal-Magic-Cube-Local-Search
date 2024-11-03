@@ -19,10 +19,9 @@ def objective_function(cube, magic_number):
     n = cube.shape[0]
     state_value = 0
 
-    # Calculate difference for rows, columns, and depths
+    # Calculate difference for depth, rows, and columns
     for i in range(n):
         for j in range(n):
-            # Calculate difference for depth, rows, and columns
             state_value += abs(np.sum(cube[i, j, :]) - magic_number)
             state_value += abs(np.sum(cube[i, :, j]) - magic_number)
             state_value += abs(np.sum(cube[:, i, j]) - magic_number)
