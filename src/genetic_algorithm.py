@@ -208,4 +208,4 @@ def ga():
     
     visualize_magic_cube(new_population[0][0], f"best last iteration with value: {new_population[0][1]}")
 
-    return states_for_vid_player
+    return new_population[0][0], new_population[0][1], states_for_vid_player
