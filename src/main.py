@@ -5,6 +5,7 @@ from hc_random_restart import hc_random_restart
 from hc_sideways_move import hc_sideways_move
 from hc_steepest_ascent import hc_steepest_ascent
 from simulated_annealing import simulated_annealing
+from genetic_algorithm import ga
 
 ########## EXAMPLE OF USE ##########
 
@@ -13,6 +14,7 @@ cube = make_cube(n)
 mc = magic_number(n)
 
 best_cube, best_state_value, states = hc_stochastic(cube, mc, 1000) ## Change the local search algorithm and its parameter here
+# best_cube, best_state_value, states = ga() ## for ga, variables (max iteration, max population, and mutation probability) still local in ga file 
 print("Running local search algorithm...")
 print("DONE! Best state value:" + str(best_state_value))
 
