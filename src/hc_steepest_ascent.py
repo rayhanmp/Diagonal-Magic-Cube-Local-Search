@@ -6,6 +6,7 @@ from magic_utils import objective_function
 
 def hc_steepest_ascent(cube, magic_number):
     n = cube.shape[0]
+    num_of_iteration = 0
 
     # Initialise the current state value
     current_state_value = objective_function(cube, magic_number)
@@ -15,6 +16,7 @@ def hc_steepest_ascent(cube, magic_number):
     best_cube = cube.copy()
 
     while True:
+        num_of_iteration += 1
         best_neighbour_state_value = current_state_value
         best_neighbour_swap = None
 
@@ -55,4 +57,4 @@ def hc_steepest_ascent(cube, magic_number):
         else:
             break
 
-    return best_cube, best_state_value
+    return best_cube, best_state_value, num_of_iteration
