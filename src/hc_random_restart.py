@@ -6,6 +6,7 @@ import numpy as np
 # @author: Rayhan Maheswara Pramanda
 # @date: 2024-11-04
 
+
 def hc_random_restart(cube, magic_number, max_restarts):
     num_of_restart = 0
     num_of_iterations = []
@@ -13,13 +14,15 @@ def hc_random_restart(cube, magic_number, max_restarts):
     # Initialise the best state value and cube
     best_state_value = objective_function(cube, magic_number)
     best_cube = cube.copy()
+    states = []
+    states.append(cube.flatten())
 
     # Repeat the random restart for n times
     while (num_of_restart < max_restarts):
         # Randomly shuffle the cube
         np.random.shuffle(cube)
 
-        cube, state_value, num_of_iteration = hc_steepest_ascent(cube, magic_number)
+        cube, state_value, num_of_iteration, states = hc_steepest_ascent(cube, magic_number)
 
         num_of_iterations.append(num_of_iteration)
 
@@ -30,4 +33,4 @@ def hc_random_restart(cube, magic_number, max_restarts):
         
         num_of_restart += 1
 
-    return best_cube, best_state_value, num_of_iterations
+    return best_cube, best_state_value, num_of_iterations, states

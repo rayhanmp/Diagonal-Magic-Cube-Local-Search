@@ -10,6 +10,8 @@ def hc_stochastic(cube, magic_number, max_iteration):
 
     # Initialise the current state value
     best_state_value = objective_function(cube, magic_number)
+    states = []
+    states.append(cube.flatten())
 
     for i in range(max_iteration):
         # Generate random indices for swapping two cells
@@ -25,8 +27,9 @@ def hc_stochastic(cube, magic_number, max_iteration):
         # Check the neighbour state value is better than the current best state value
         if neighbour_state_value < best_state_value:
             best_state_value = neighbour_state_value
+            states.append(cube.flatten())
         else:
             # Revert the swap
             cube[i, j, k], cube[x, y, z] = cube[x, y, z], cube[i, j, k]
 
-    return cube, best_state_value
+    return cube, best_state_value, states

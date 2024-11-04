@@ -8,6 +8,9 @@ def hc_steepest_ascent(cube, magic_number):
     n = cube.shape[0]
     num_of_iteration = 0
 
+    states = []
+    states.append(cube.flatten())
+
     # Initialise the current state value
     current_state_value = objective_function(cube, magic_number)
     best_state_value = current_state_value
@@ -51,11 +54,11 @@ def hc_steepest_ascent(cube, magic_number):
             # Perform the best swap
             cube[i, j, k], cube[x, y, z] = cube[x, y, z], cube[i, j, k]
             current_state_value = best_neighbour_state_value
-
+            states.append(cube.flatten())
             if best_neighbour_state_value < best_state_value:
                 best_state_value = best_neighbour_state_value
                 best_cube = cube.copy()
         else:
             break
 
-    return best_cube, best_state_value, num_of_iteration
+    return best_cube, best_state_value, num_of_iteration, states

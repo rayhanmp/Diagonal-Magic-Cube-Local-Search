@@ -10,6 +10,8 @@ def hc_sideways_move(cube, magic_number, max_sideways_moves):
     # Initialise the current state value
     current_state_value = objective_function(cube, magic_number)
     best_state_value = current_state_value
+    states = []
+    states.append(cube.flatten())
 
     # Initialise the best cube as the initial cube
     best_cube = cube.copy()
@@ -59,6 +61,7 @@ def hc_sideways_move(cube, magic_number, max_sideways_moves):
             # Perform the best swap
             cube[i, j, k], cube[x, y, z] = cube[x, y, z], cube[i, j, k]
             current_state_value = best_neighbour_state_value
+            states.append(cube.flatten())
 
             if best_neighbour_state_value < best_state_value:
                 best_state_value = best_neighbour_state_value
@@ -66,4 +69,4 @@ def hc_sideways_move(cube, magic_number, max_sideways_moves):
         else:
             break
 
-    return best_cube, best_state_value
+    return best_cube, best_state_value, states
