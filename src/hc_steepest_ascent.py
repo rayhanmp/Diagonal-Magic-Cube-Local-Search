@@ -42,19 +42,19 @@ def hc_steepest_ascent(cube, magic_number):
                                     if neighbour_state_value < best_neighbour_state_value:
                                         best_neighbour_state_value = neighbour_state_value
                                         best_neighbour_swap = (i, j, k), (x, y, z)
-                                        print(best_neighbour_state_value)
                                         
                                     # Revert the swap
                                     cube[i, j, k], cube[x, y, z] = cube[x, y, z], cube[i, j, k]
 
         # Check if a better swap was found
+        states.append(cube.flatten())
+
         if best_neighbour_swap and best_neighbour_state_value < current_state_value:
             (i, j, k), (x, y, z) = best_neighbour_swap
             
             # Perform the best swap
             cube[i, j, k], cube[x, y, z] = cube[x, y, z], cube[i, j, k]
             current_state_value = best_neighbour_state_value
-            states.append(cube.flatten())
             if best_neighbour_state_value < best_state_value:
                 best_state_value = best_neighbour_state_value
                 best_cube = cube.copy()
