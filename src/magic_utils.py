@@ -2,7 +2,7 @@ import numpy as np
 
 # Module for basic magic-cube-related utilities
 # @author: Rayhan Maheswara Pramanda & Jasmine Callista Aurellie Irfan
-# @date: 2024-11-03
+# @date: 2024-11-04
 
 # Determine Magic Number for N Cube
 def magic_number(n):
@@ -46,6 +46,15 @@ def objective_function(cube, magic_number):
 
     return state_value
 
+# Write states to file
+def write_states_to_file(states, filename):
+    np.savez(filename, states)
+
+# Read states from file
+def read_states_from_file(filename):
+    with np.load(filename) as data:
+        states = [data[key] for key in data]
+    return states
 
 # Test driver
 def test_magic_cube(cube):
