@@ -1,4 +1,5 @@
 import numpy as np
+import os
 
 # Module for basic magic-cube-related utilities
 # @author: Rayhan Maheswara Pramanda & Jasmine Callista Aurellie Irfan
@@ -48,13 +49,35 @@ def objective_function(cube, magic_number):
 
 # Write states to file
 def write_states_to_file(states, filename):
-    np.savez(filename, states)
+    state_dict = {}
+    for i in range(len(states)):
+        state_dict[str(i)] = states[i]
+    np.savez(filename, **state_dict)
 
 # Read states from file
 def read_states_from_file(filename):
     with np.load(filename) as data:
         states = [data[key] for key in data]
     return states
+
+
+################### TESTS ###################
+
+# Generate sample states for test
+states_sample = [np.random.randint(1, 126, (5, 5, 5)), np.random.randint(1, 126, (5, 5, 5))]
+filename = "temp_states.npz"
+
+# Call the write and read functions
+write_states_to_file(states_sample, filename)
+read_states = read_states_from_file(filename)
+
+assert len(states_sample) == len(read_states), "Num of arrays doesn't match."
+
+for original, read in zip(states_sample, read_states):
+    np.testing.assert_array_equal(original, read, "Array data doesn't match.")
+
+# Delete the file
+os.remove(filename)
 
 # Test driver
 def test_magic_cube(cube):
