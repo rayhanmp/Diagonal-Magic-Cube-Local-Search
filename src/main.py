@@ -4,6 +4,7 @@ from hc_stochastic import hc_stochastic
 from hc_random_restart import hc_random_restart
 from hc_sideways_move import hc_sideways_move
 from hc_steepest_ascent import hc_steepest_ascent
+from simulated_annealing import simulated_annealing
 
 ########## EXAMPLE OF USE ##########
 

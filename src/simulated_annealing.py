@@ -1,7 +1,6 @@
 from magic_utils import objective_function
 import numpy as np
 import math
-import random
 
 # Implementasi Algoritma Simulated Annealing
 def simulated_annealing(cube, magicNumber, temperature, cooling_rate, iterations, threshold):
@@ -10,6 +9,9 @@ def simulated_annealing(cube, magicNumber, temperature, cooling_rate, iterations
     current_score = objective_function(current_cube, magicNumber)
     best_cube = current_cube.copy()
     best_score = current_score
+
+    states = []
+    states.append(cube.flatten())
 
     for _ in range(iterations):
         # Pilih dua posisi acak untuk ditukar
@@ -27,6 +29,7 @@ def simulated_annealing(cube, magicNumber, temperature, cooling_rate, iterations
       
         # Metropolis acceptance criterion
         probability = math.exp(min(max(delta_E / temperature, -700), 700)) # Dibatasi untuk rentang [-700, 700] untuk menghidari overflow error
+        states.append(cube.flatten())
 
         # Tentukan apakah menerima state baru
         if delta_E > 0 or probability > threshold:
@@ -41,4 +44,4 @@ def simulated_annealing(cube, magicNumber, temperature, cooling_rate, iterations
         # Kurangi temperatur
         temperature *= cooling_rate
 
-    return best_cube, best_score
+    return best_cube, best_score, states
