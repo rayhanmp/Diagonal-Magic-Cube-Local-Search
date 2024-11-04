@@ -36,11 +36,11 @@ Python 3 with Numpy and Plotly.
   ## Contributors
 | NIM | Name | Contributions |
 |:---:|:----:|:----:|
-|13221011| Jazila Faza A. N. | visualiser, report document|
+|13221011| Jazila Faza A. N. | visualiser, report document (major)|
 |13221055| Ahmad Hafidz A. | genetic algorithm|
-|13221065| Caitleen Devina | visualiser, report document|
+|13221065| Caitleen Devina | visualiser, report document (major)|
 |18221130| Rayhan Maheswara P. | hill climbing algorithms, video player, objective function, report document (minor)|
-|18321008| Jasmine Callista A. I. | simulated annealing algorithm, objective function|
+|18321008| Jasmine Callista A. I. | simulated annealing algorithm, objective function, report document (minor)|
 
 ## License
 <a name="license"></a>
