@@ -50,8 +50,8 @@ def objective_function(cube, magic_number):
 # Test driver
 def test_magic_cube(cube):
     n = cube.shape[0]
-    magic_number = magic_number(n)
-    state_value = objective_function(cube, magic_number)
+    mc = magic_number(n)
+    state_value = objective_function(cube, mc)
 
     # Expected value for the test cube
     expected_value = 186
