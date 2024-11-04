@@ -7,7 +7,7 @@ import numpy as np
 # @date: 2024-11-04
 
 
-## TODO: Clarify whether we need to r
+## TODO: Clarify whether we need to limit the number of iteratios per restart or just return it
 def hc_random_restart(cube, magic_number, max_restarts):
     num_of_restart = 0
     num_of_iterations = []
