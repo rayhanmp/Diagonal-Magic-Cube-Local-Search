@@ -5,7 +5,7 @@ import numpy as np
 # @author: Rayhan Maheswara Pramanda (modified from visualize.py)
 # @date: 2024-11-04
 
-def animate_cube_evolution(states, n, title="Magic Cube State Evolution", initial_duration=100):
+def video_player(states, n, title="Magic Cube State Evolution", initial_duration=100):
     # Reshape the states to 3D cube since the states are flattened
     states_reshaped = [np.array(state).reshape(n, n, n) for state in states]
 
