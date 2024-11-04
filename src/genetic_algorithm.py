@@ -2,6 +2,7 @@ import numpy as np
 import random
 import math
 import time
+from visualize import visualize_magic_cube
 
 # crossover method: Order Crossover (OX)
 # mutation method: swapping between 2 element
