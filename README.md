@@ -12,7 +12,7 @@ Inspired by the advent of the 5x5x5 diagonal magic cube proposed by Walter Trump
 TBD
 
 ## Technologies Used
-Python 3 with various libraries.
+Python 3 with Numpy and Plotly.
 
 ## Author
 | NIM | Nama |
@@ -28,4 +28,4 @@ Python 3 with various libraries.
 Licensed under the [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0) (GPLv3).
 
 
-> Made for the IF3170 Artificial Intellegence course @ITB.
+> Made for the IF3170 Artificial Intelligence course @ITB.
